@@ -56,6 +56,9 @@ A simple and modern weather application built with React and styled-components. 
 
 ## Contributing
 
+![Annotation 2024-07-30 175843](https://github.com/user-attachments/assets/90cb91fb-a92d-4536-9ca8-25e5070ce1ca)
+
+
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements.
 
 ## License
