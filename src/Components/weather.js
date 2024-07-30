@@ -10,18 +10,23 @@ const Weather = () => {
 
   const fetchWeather = async () => {
     try {
-      const apiKey = 'YOUR_API_KEY';
+      const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
+      console.log(`Fetching weather for ${city} with API key ${apiKey}`);
+      
       const weatherResponse = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       );
+      console.log('Weather response:', weatherResponse.data);
       setWeather(weatherResponse.data);
 
       const forecastResponse = await axios.get(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
       );
+      console.log('Forecast response:', forecastResponse.data);
       setForecast(forecastResponse.data);
       setError('');
     } catch (error) {
+      console.error('Error fetching weather:', error);
       setError('City not found');
       setWeather(null);
       setForecast(null);
